@@ -6,7 +6,7 @@
 </p>
 <h2 align="center">Un-Official ovoid API Wrapper</h2>
 
-Telah di test pada OVO versi 2.8.0 | 27 Maret 2019 | PHP 7.2.2
+Telah di test pada OVO versi 2.11.1 | 16 Juni 2019 | PHP 7.3.*
 
 | Method  | Result  |
 |---|---|
@@ -134,4 +134,4 @@ Contoh: `$ovo->unreadHistory()->getTotal()`
 Project ini saya membuatnya kasaran sekali, jadi ketika ada proses request ke endpoint ovo dan terjadi kegagalan atau parameter tidak sesuai, script masih belum bisa mendapatkan response error dari ovo nya, harus manual `dd` dari source code(dari file Response). Jadi silahkan berkontribusi, baik dari dokumentasi program atau membenahi script ini :)
 
 ## note
-Project ini saya ambil dari lintangtimur, terima untuk pihak terkait, project ini hanya penyempurnaan dari lintangtimur, untuk versi asli, bisa dilihat di github lintangtimur
+Project ini saya ambil dari [lintangtimur](https://github.com/lintangtimur), terima untuk pihak terkait, project ini hanya penyempurnaan dari  [lintangtimur](https://github.com/lintangtimur), untuk versi asli, bisa dilihat di github [lintangtimur](https://github.com/lintangtimur)
