@@ -1,0 +1,25 @@
+{
+    "name": "khenop/ovoid",
+    "description": "Un-Official OVOID API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "khenop",
+            "email": "khenop16@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files":[
+          "src/helper/function.php"
+        ],
+        "psr-4" :{
+          "Khenop\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7",
+        "symfony/var-dumper": "^4.2"
+    }
+}
