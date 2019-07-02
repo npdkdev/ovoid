@@ -1,6 +1,6 @@
 <?php
 
-namespace Khenop;
+namespace Khenop\Ovo;
 
 class ParseResponse
 {
@@ -10,17 +10,17 @@ class ParseResponse
      * @var array
      */
     public $storeClass = [
-        OVOID::BASE_ENDPOINT . 'v2.0/api/auth/customer/login2FA'                 => 'Khenop\Response\Login2FAResponse',
-        OVOID::BASE_ENDPOINT . 'v2.0/api/auth/customer/login2FA/verify'          => 'Khenop\Response\Login2FAVerifyResponse',
-        OVOID::BASE_ENDPOINT . 'v2.0/api/auth/customer/loginSecurityCode/verify' => 'Khenop\Response\LoginSecurityCodeResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/api/front/'                                 => 'Khenop\Response\FrontResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/budget/detail'                              => 'Khenop\Response\BudgetResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/api/customers/transfer'                     => 'Khenop\Response\CustomerTransferResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/api/auth/customer/genTrxId'                 => 'Khenop\Response\GenTrxIdResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/notification/status/count/UNREAD'           => 'Khenop\Response\NotificationUnreadResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/notification/status/all'                    => 'Khenop\Response\NotificationAllResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/api/auth/customer/logout'                   => 'Khenop\Response\LogoutResponse',
-        OVOID::BASE_ENDPOINT . 'v1.0/api/auth/customer/unlock'                        => 'Khenop\Response\CustomerUnlockResponse'
+        OVOID::BASE_ENDPOINT . 'v2.0/api/auth/customer/login2FA'                 => 'Khenop\Ovo\Response\Login2FAResponse',
+        OVOID::BASE_ENDPOINT . 'v2.0/api/auth/customer/login2FA/verify'          => 'Khenop\Ovo\Response\Login2FAVerifyResponse',
+        OVOID::BASE_ENDPOINT . 'v2.0/api/auth/customer/loginSecurityCode/verify' => 'Khenop\Ovo\Response\LoginSecurityCodeResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/api/front/'                                 => 'Khenop\Ovo\Response\FrontResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/budget/detail'                              => 'Khenop\Ovo\Response\BudgetResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/api/customers/transfer'                     => 'Khenop\Ovo\Response\CustomerTransferResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/api/auth/customer/genTrxId'                 => 'Khenop\Ovo\Response\GenTrxIdResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/notification/status/count/UNREAD'           => 'Khenop\Ovo\Response\NotificationUnreadResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/notification/status/all'                    => 'Khenop\Ovo\Response\NotificationAllResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/api/auth/customer/logout'                   => 'Khenop\Ovo\Response\LogoutResponse',
+        OVOID::BASE_ENDPOINT . 'v1.0/api/auth/customer/unlock'                        => 'Khenop\Ovo\Response\CustomerUnlockResponse'
     ];
 
     private $response;
@@ -37,13 +37,13 @@ class ParseResponse
         
         //-- Cek apakah ada error dari OVO Response
         if (isset($jsonDecodeResult->code)) {
-            throw new \Khenop\Exception\OvoidException($jsonDecodeResult->message . ' ' . $url);
+            throw new \Khenop\Ovo\Exception\OvoidException($jsonDecodeResult->message . ' ' . $url);
         }
 
         $parts = parse_url($url);
 
         if ($parts['path'] == '/wallet/v2/transaction') {
-            $this->response = new \Khenop\Response\WalletTransactionResponse($jsonDecodeResult);
+            $this->response = new \Khenop\Ovo\Response\WalletTransactionResponse($jsonDecodeResult);
         } else {
             $this->response = new $this->storeClass[$url]($jsonDecodeResult);
         }
