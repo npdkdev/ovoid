@@ -1,9 +1,9 @@
 <?php
 
-namespace Khenop\HTTP;
+namespace Khenop\Ovo\HTTP;
 
-use Khenop\HTTPClient;
-use Khenop\ParseResponse;
+use Khenop\Ovo\HTTPClient;
+use Khenop\Ovo\ParseResponse;
 
 class Curl implements HTTPClient
 {
@@ -25,7 +25,7 @@ class Curl implements HTTPClient
      * @param  string                $url
      * @param  array                 $data
      * @param  array                 $headers
-     * @return \Khenop\ParseResponse
+     * @return \Khenop\Ovo\ParseResponse
      */
     public function post($url, $data, $headers)
     {
@@ -57,7 +57,7 @@ class Curl implements HTTPClient
      * @param  string                $url
      * @param  array                 $data
      * @param  array                 $headers
-     * @return \Khenop\ParseResponse
+     * @return \Khenop\Ovo\ParseResponse
      */
     public function get($url, $data, $headers)
     {
