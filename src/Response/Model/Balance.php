@@ -1,6 +1,6 @@
 <?php
 
-namespace Khenop\Response\Model;
+namespace Khenop\Ovo\Response\Model;
 
 class Balance
 {
