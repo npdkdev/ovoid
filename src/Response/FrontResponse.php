@@ -1,41 +1,41 @@
 <?php
 
-namespace Khenop\Response;
+namespace Khenop\Ovo\Response;
 
 class FrontResponse
 {
     /**
      * Balance Model
      *
-     * @var \Khenop\Response\Model\Balance
+     * @var \Khenop\Ovo\Response\Model\Balance
      */
     private $balance;
 
     /**
      * Permission Model
      *
-     * @var \Khenop\Response\Model\Permission
+     * @var \Khenop\Ovo\Response\Model\Permission
      */
     private $permission;
 
     /**
      * Pofile Model
      *
-     * @var \Khenop\Response\Model\Profile
+     * @var \Khenop\Ovo\Response\Model\Profile
      */
     private $profile;
 
     public function __construct($data)
     {
-        $this->balance = new \Stelin\Response\Model\Balance($data->balance);
-        $this->permission = new \Stelin\Response\Model\Permission($data->permissions);
-        $this->profile = new \Stelin\Response\Model\Profile($data->profile);
+        $this->balance = new \Khenop\Ovo\Response\Model\Balance($data->balance);
+        $this->permission = new \Khenop\Ovo\Response\Model\Permission($data->permissions);
+        $this->profile = new \Khenop\Ovo\Response\Model\Profile($data->profile);
     }
 
     /**
      * Get balance Model
      *
-     * @return \Khenop\Response\Model\Balance
+     * @return \Khenop\Ovo\Response\Model\Balance
      */
     public function getBalance()
     {
@@ -45,7 +45,7 @@ class FrontResponse
     /**
      * Get balance Model
      *
-     * @return \Khenop\Response\Model\Permission
+     * @return \Khenop\Ovo\Response\Model\Permission
      */
     public function getPermission()
     {
@@ -55,7 +55,7 @@ class FrontResponse
     /**
      * Get balance Model
      *
-     * @return \Khenop\Response\Model\Profile
+     * @return \Khenop\Ovo\Response\Model\Profile
      */
     public function getProfile()
     {
