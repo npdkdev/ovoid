@@ -15,7 +15,7 @@
           "src/Helper/functions.php"
         ],
         "psr-4" :{
-          "Khenop\\": "src"
+          "Ovo\\": "src"
         }
     },
     "require-dev": {
