@@ -1,24 +1,24 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Khenop\OVOID;
-use Khenop\Meta\Meta;
-use Khenop\Response\Login2FAResponse;
-use Khenop\ParseResponse;
+use Khenop\Ovo\OVOID;
+use Khenop\Ovo\Meta\Meta;
+use Khenop\Ovo\Response\Login2FAResponse;
+use Khenop\Ovo\ParseResponse;
 
 class OvoidTest extends TestCase
 {
     /**
      * ovoid
      *
-     * @var \Khenop\OVOID
+     * @var \Khenop\Ovo\OVOID
      */
     private $ovoid;
 
     /**
      * curl
      *
-     * @var \Khenop\HTTP\Curl
+     * @var \Khenop\Ovo\HTTP\Curl
      */
     private $curl;
 
