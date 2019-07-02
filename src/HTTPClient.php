@@ -1,6 +1,6 @@
 <?php
 
-namespace Khenop;
+namespace Khenop\Ovo;
 
 interface HTTPClient
 {
@@ -10,7 +10,7 @@ interface HTTPClient
      * @param  string                $url
      * @param  array                 $data
      * @param  array                 $headers
-     * @return \Stelin\ParseResponse
+     * @return \Khenop\Ovo\ParseResponse
      */
     public function post($url, $data, $headers);
 
@@ -20,7 +20,7 @@ interface HTTPClient
      * @param  string                $url
      * @param  array                 $data
      * @param  array                 $headers
-     * @return \Stelin\ParseResponse
+     * @return \Khenop\Ovo\ParseResponse
      */
     public function get($url, $data, $headers);
 }
