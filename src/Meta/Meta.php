@@ -1,6 +1,6 @@
 <?php
 
-namespace Khenop\Meta;
+namespace Khenop\Ovo\Meta;
 
 /**
  * Meta
