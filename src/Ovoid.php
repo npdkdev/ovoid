@@ -1,9 +1,9 @@
 <?php
 
-namespace Khenop;
+namespace Khenop\Ovo;
 
-use Khenop\HTTP\Curl;
-use Khenop\Meta\Meta;
+use Khenop\Ovo\HTTP\Curl;
+use Khenop\Ovo\Meta\Meta;
 
 /**
  * OVOID
@@ -44,7 +44,7 @@ class OVOID
      * refId yang akan digunakan selanjutnya
      *
      * @param  string                            $mobile_phone
-     * @return \Khenop\Response\Login2FAResponse
+     * @return \Khenop\Ovo\Response\Login2FAResponse
      */
     public function login2FA($mobile_phone)
     {
@@ -68,7 +68,7 @@ class OVOID
      * @param  string                                  $refId
      * @param  string                                  $verificationCode 4 digit
      * @param  string                                  $mobilePhone      phone number Example: 085289...
-     * @return \Khenop\Response\Login2FAVerifyResponse
+     * @return \Khenop\Ovo\Response\Login2FAVerifyResponse
      */
     public function login2FAVerify($refId, $verificationCode, $mobilePhone)
     {
@@ -94,7 +94,7 @@ class OVOID
      *
      * @param  string                                     $securityCode      MAX is 6 digit
      * @param  string                                     $updateAccessToken
-     * @return \Khenop\Response\LoginSecurityCodeResponse
+     * @return \Khenop\Ovo\Response\LoginSecurityCodeResponse
      */
     public function loginSecurityCode($securityCode, $updateAccessToken)
     {
@@ -114,7 +114,7 @@ class OVOID
      *
      * Amount, spending, total spending, and summary
      *
-     * @return \Khenop\Response\BudgetResponse
+     * @return \Khenop\Ovo\Response\BudgetResponse
      */
     public function getBudget()
     {
@@ -126,7 +126,7 @@ class OVOID
     /**
      * Get OVO Balance
      *
-     * @return \Khenop\Response\FrontResponse
+     * @return \Khenop\Ovo\Response\FrontResponse
      */
     public function balanceModel()
     {
@@ -141,13 +141,13 @@ class OVOID
      * @param  string                                   $to_mobilePhone
      * @param  int                                      $amount
      * @param  string                                   $message
-     * @throws \Khenop\Exception\AmountException
-     * @return \Khenop\Reponse\CustomerTransferResponse
+     * @throws \Khenop\Ovo\Exception\AmountException
+     * @return \Khenop\Ovo\Reponse\CustomerTransferResponse
      */
     public function transferOvo($to_mobilePhone, $amount, $message = null)
     {
         if ($amount < 10000) {
-            throw new \Khenop\Exception\AmountException('Minimal 10.000');
+            throw new \Khenop\Ovo\Exception\AmountException('Minimal 10.000');
         }
 
         $ch = new Curl;
@@ -166,7 +166,7 @@ class OVOID
      *
      * @param  string                            $mobilePhone
      * @param  int                               $amount
-     * @return \Khenop\Response\GenTrxIdResponse
+     * @return \Khenop\Ovo\Response\GenTrxIdResponse
      */
     private function generateTrxId($mobilePhone, $amount)
     {
@@ -206,7 +206,7 @@ class OVOID
     /**
      * mendapatkan total unread history
      *
-     * @return \Khenop\Response\NotificationUnreadResponse
+     * @return \Khenop\Ovo\Response\NotificationUnreadResponse
      */
     public function unreadHistory()
     {
@@ -218,7 +218,7 @@ class OVOID
     /**
      * get all notification
      *
-     * @return \Khenop\Response\NotificationAllResponse
+     * @return \Khenop\Ovo\Response\NotificationAllResponse
      */
     public function allNotification()
     {
@@ -232,7 +232,7 @@ class OVOID
      *
      * @param  int                                        $page  halaman ke berapa
      * @param  int                                        $limit berapa kontent dalam 1 page
-     * @return \Khenop\Response\WalletTransactionResponse
+     * @return \Khenop\Ovo\Response\WalletTransactionResponse
      */
     public function getWalletTransaction($page, $limit = 10)
     {
