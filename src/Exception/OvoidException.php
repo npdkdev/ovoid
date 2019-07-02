@@ -1,6 +1,6 @@
 <?php
 
-namespace Khenop\Exception;
+namespace Khenop\Ovo\Exception;
 
 class OvoidException extends \Exception
 {
