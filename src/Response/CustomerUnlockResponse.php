@@ -1,5 +1,5 @@
 <?php
-namespace Khenop\Response;
+namespace Khenop\Ovo\Response;
 
 class CustomerUnlockResponse
 {
